@@ -476,35 +476,95 @@ console.log(searchByTitle("ord"));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
-  "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
+  "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo,
+   mentre "unmatch" deve includere tutti i rimanenti.
 */
+console.log("ESERCIZIO 18");
 
+const searchAndDivide = function (str) {
+  const result = {
+    match: [],
+    unmatch: [],
+  };
+  movies.forEach((item) =>
+    item.Title.toLocaleLowerCase().includes(str.toLocaleLowerCase())
+      ? result.match.push(item.Title)
+      : result.unmatch.push(item.Title)
+  );
+  return result;
+};
+console.log(searchAndDivide("avengers"));
 /* ESERCIZIO 19
-  Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
+  Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e 
+  ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+console.log("ESERCIZIO 19");
 
+const removeIndex = function (n) {
+  let films = [...movies];
+  if (n <= films.length) {
+    films.splice(n, 1);
+  }
+  return films;
+};
+
+console.log(removeIndex(13));
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+console.log("ESERCIZIO 20");
+const getContainer = () => document.getElementById("container");
+
+console.log(getContainer());
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+console.log("ESERCIZIO 21");
+
+const getTds = () => document.getElementsByTagName("td");
+
+console.log(getTds());
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+console.log("ESERCIZIO 22");
+
+const printTds = () => {
+  const tds = getTds();
+  for (let i = 0; i < tds.length; i++) {
+    const currenTd = tds[i].innerText;
+    console.log(currenTd);
+  }
+};
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+console.log("ESERCIZIO 23");
+
+const addRedBg = () => {
+  const links = document.getElementsByTagName("a");
+  for (let i = 0; i < links.length; i++) {
+    const currentLink = links[i];
+    currentLink.style.backgroundColor = "red";
+  }
+};
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+console.log("ESERCIZIO 24");
 
+const addLi = () => {
+  const myList = document.getElementById("myList");
+  const newLi = document.createElement("li");
+  newLi.innerText = "New List Item";
+  myList.appendChild(newLi);
+};
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
