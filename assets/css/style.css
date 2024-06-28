@@ -17,13 +17,13 @@ body {
   font-size: large;
   font-weight: 700;
 }
-a {
+.divA {
   font-size: 25px;
   color: rgb(0, 0, 0);
   border-radius: 5px;
   padding: 3px;
 }
-a:hover {
+div a:hover {
   text-decoration: none;
   color: #000000;
   font-size: 900;
