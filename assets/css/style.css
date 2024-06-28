@@ -11,6 +11,23 @@ body {
   text-align: center;
   background-color: blueviolet;
 }
+#cit {
+  font-size: large;
+  font-weight: 700;
+}
+a {
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+}
+a:hover {
+  text-decoration: none;
+  color: #000000;
+  font-size: 900;
+}
+main {
+  width: 900px;
+  margin: 0 auto;
+}
 h2,
 h1 {
   color: rgb(255, 255, 255);

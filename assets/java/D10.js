@@ -499,16 +499,12 @@ console.log(searchAndDivide("avengers"));
   ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 console.log("ESERCIZIO 19");
-
-const removeIndex = function (n) {
-  let films = [...movies];
-  if (n <= films.length) {
-    films.splice(n, 1);
-  }
-  return films;
-};
-
-console.log(removeIndex(13));
+function removeIndex(n) {
+  let remuve = movies.splice(n, 1);
+  return remuve;
+}
+removeIndex(13);
+console.log(movies);
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
@@ -518,7 +514,11 @@ console.log("ESERCIZIO 20");
 const getContainer = () => document.getElementById("container");
 
 console.log(getContainer());
-
+const colore = () => {
+  const h1 = getContainer();
+  h1.style.color = "yellow";
+};
+colore();
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
@@ -550,9 +550,12 @@ const addRedBg = () => {
   const links = document.getElementsByTagName("a");
   for (let i = 0; i < links.length; i++) {
     const currentLink = links[i];
-    currentLink.style.backgroundColor = "red";
+    /*    currentLink.style.background = "red"; */
+    // mi faceva un pò schifo come palette gli ho messo il yellow//
+    currentLink.style.background = "yellow";
   }
 };
+addRedBg();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
@@ -569,10 +572,25 @@ const addLi = () => {
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+console.log("ESERCIZIO 25");
+
+const removeLi = () => {
+  const myList = document.getElementById("myList");
+  myList.innerHTML = "";
+};
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+console.log("ESERCIZIO 26");
 
+const addsTestClass = () => {
+  const trs = document.getElementsByTagName("tr");
+  for (let i = 0; i < trs.length; i++) {
+    const currenTr = trs[i];
+    currenTr.classList.add("test");
+  }
+};
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
@@ -586,7 +604,22 @@ const addLi = () => {
   ***
 
 */
+console.log("ESERCIZIO 27");
 
+const halfTree = (n) => {
+  for (let i = 1; i <= n; i++) {
+    let string = "";
+    const stringaSella = [];
+    for (let b = 1; b <= i; b++) {
+      const asterisco = "*";
+      stringaSella.push(asterisco);
+      string = stringaSella.join("");
+    }
+    console.log(string);
+  }
+};
+
+halfTree(3);
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -598,7 +631,41 @@ const addLi = () => {
   *****
 
 */
+console.log("ESERCIZIO 28");
 
+const tree = (n) => {
+  let string = "";
+  for (let i = 1; i <= n; i++) {
+    const stringaSella = ["*"];
+
+    const spazio = [];
+
+    for (let c = n; c > i; c--) {
+      let space = " ";
+      spazio.unshift(space);
+    }
+    for (let b = 1; b <= i - 1; b++) {
+      const asterisco = "**";
+      stringaSella.push(asterisco);
+    }
+    string = spazio.join("") + stringaSella.join("");
+    console.log(string);
+  }
+};
+
+tree(10);
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+console.log("ESERCIZIO 29");
+
+const isItPrime = (n) => {
+  for (let i = 2, b = Math.sqrt(n); i <= b; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return n > 1;
+};
+
+console.log(isItPrime(11));
