@@ -82,6 +82,7 @@ removeLastSkill(me);
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
+console.log("ESERCIZIO 1");
 const dice = () => {
   const result = Math.floor(Math.random() * 6) + 1;
   return result;
@@ -90,17 +91,47 @@ console.log(dice());
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+console.log("ESERCIZIO 2");
 
+const whoIsBigger = (n1, n2) => {
+  let biggerNum = n1;
+
+  if (n2 === n1) {
+    return "i numeri sono uguali";
+  } else if (n2 > n1) {
+    return (biggerNum = n2);
+  }
+  return biggerNum;
+};
+console.log("il numero più grande fra 10 e 20 è =", whoIsBigger(10, 20));
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
+console.log("ESERCIZIO 3");
 
+const splitMe = (str) => str.split(" ");
+
+console.log("io amo i gatti =>", splitMe("io amo i gatti"));
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+console.log("ESERCIZIO 4");
+
+const deleteOne = function (str, boolean) {
+  if (typeof boolean === "boolean" && boolean) {
+    const trueStr = str.slice(1);
+    return trueStr;
+  } else if (typeof boolean === "boolean" && boolean === false) {
+    const falseStr = str.slice(0, str.length - 1);
+    return falseStr;
+  }
+};
+
+console.log("ciao amici true =>", deleteOne("ciao amici ", true));
+console.log("ciao amici false =>", deleteOne("ciao amici ", false));
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
