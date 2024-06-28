@@ -16,7 +16,7 @@ body {
 #cit {
   font-size: large;
   font-weight: 700;
-  background-color: #abcd84;
+  background-color: #9acd84;
   margin: 0;
 }
 .divA {
@@ -39,10 +39,7 @@ h1 {
   text-shadow: 2px 2px 3px #000000;
   margin-bottom: 3rem;
 }
-h3,
-h4 {
-  color: #ffffff;
-}
+
 #logo {
   border-radius: 5px;
   display: inline;
