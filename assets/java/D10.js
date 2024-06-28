@@ -550,9 +550,7 @@ const addRedBg = () => {
   const links = document.getElementsByTagName("a");
   for (let i = 0; i < links.length; i++) {
     const currentLink = links[i];
-    /*    currentLink.style.background = "red"; */
-    // mi faceva un pò schifo come palette gli ho messo il yellow//
-    currentLink.style.background = "yellow";
+    currentLink.style.background = "red";
   }
 };
 addRedBg();
