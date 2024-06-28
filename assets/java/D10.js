@@ -451,10 +451,28 @@ console.log(onlyInLastMillennium(movies));
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+console.log("ESERCIZIO 16");
+
+const sumAllTheYears = function (array) {
+  const years = array.map((movie) => parseInt(movie.Year));
+  const yearSum = years.reduce(
+    (accumulator, currentYear) => accumulator + currentYear,
+    0
+  );
+  return yearSum;
+};
+
+console.log(sumAllTheYears(movies));
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+console.log("ESERCIZIO 17");
+
+const searchByTitle = (str) =>
+  movies.filter((movie) => movie.Title.includes(str));
+
+console.log(searchByTitle("ord"));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
